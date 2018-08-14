@@ -45,7 +45,6 @@ static inline const char* BtmGetDefaultName()
 
 #define BTM_DEF_LOCAL_NAME BtmGetDefaultName()
 
-#define BLE_VND_INCLUDED   TRUE
 #define BTIF_HF_WBS_PREFERRED TRUE
 #define BTM_WBS_INCLUDED TRUE
 #define MAX_ACL_CONNECTIONS   16
