@@ -70,6 +70,8 @@ PRODUCT_PACKAGES += \
     bootctrl.msm8953 \
     bootctrl.msm8953.recovery
 
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \
