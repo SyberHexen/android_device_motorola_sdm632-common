@@ -90,9 +90,8 @@ int get_number_of_profiles()
 }
 #endif
 
-static int set_power_profile(void *data)
+static int set_power_profile(int profile)
 {
-    int profile = data ? *((int*)data) : 0;
     int ret = -EINVAL;
     const char *profile_name = NULL;
 
@@ -196,7 +195,7 @@ static int switch_mode(perf_mode_type_t mode) {
 
 static int process_perf_hint(void *data, perf_mode_type_t mode) {
     // enable
-    if (data) {
+    if (*(int32_t *)data) {
         ALOGI("Enable request for mode: 0x%x", mode);
         // check if mode is current mode
         if (current_mode & mode) {
@@ -339,7 +338,7 @@ int power_hint_override(power_hint_t hint, void *data)
     int ret_val = HINT_NONE;
 
     if (hint == POWER_HINT_SET_PROFILE) {
-        if (set_power_profile(data) < 0)
+        if (set_power_profile(*(int32_t *)data) < 0)
             ALOGE("Setting power profile failed. perf HAL not started?");
         return HINT_HANDLED;
     }
