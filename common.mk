@@ -107,6 +107,7 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0 \
+    libbthost_if \
     libbt-vendor
 
 # Boot control HAL
