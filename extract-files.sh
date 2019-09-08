@@ -74,6 +74,10 @@ function blob_fixup() {
         sed -i "s|/system/framework/QtiTelephonyServicelibrary.jar|/vendor/framework/QtiTelephonyServicelibrary.jar|g" "${2}"
         ;;
 
+    vendor/lib/libmot_gpu_mapper.so)
+        patchelf --add-needed libgpu_mapper_shim.so "${2}"
+        ;;
+
     vendor/etc/permissions/qti_libpermissions.xml)
         sed -i "s|name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-java|g" "${2}"
         ;;

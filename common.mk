@@ -414,6 +414,7 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
+    libgpu_mapper_shim \
     libqsap_shim
 
 # Soong
