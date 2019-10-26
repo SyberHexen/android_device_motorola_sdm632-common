@@ -70,6 +70,10 @@ function blob_fixup() {
         patchelf --add-needed libgpu_mapper_shim.so "${2}"
         ;;
 
+    vendor/lib/hw/sound_trigger.primary.msm8953.so)
+        patchelf --set-soname sound_trigger.primary.msm8953.so "${2}"
+        ;;
+
     vendor/etc/permissions/qti_libpermissions.xml)
         sed -i "s|name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-java|g" "${2}"
         ;;
