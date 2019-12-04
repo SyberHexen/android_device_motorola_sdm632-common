@@ -66,14 +66,6 @@ function blob_fixup() {
         patchelf --add-needed libqsap_shim.so "${2}"
         ;;
 
-    vendor/etc/permissions/qcrilhook.xml)
-        sed -i "s|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g" "${2}"
-        ;;
-
-    vendor/etc/permissions/telephonyservice.xml)
-        sed -i "s|/system/framework/QtiTelephonyServicelibrary.jar|/vendor/framework/QtiTelephonyServicelibrary.jar|g" "${2}"
-        ;;
-
     vendor/lib/libmot_gpu_mapper.so)
         patchelf --add-needed libgpu_mapper_shim.so "${2}"
         ;;
