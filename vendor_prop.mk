@@ -8,11 +8,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.deep_buffer.media=true \
     audio.offload.disable=false \
     audio.offload.video=false \
+    audio.volume.headset.gain.depcal=true \
     persist.audio.dualmic.config=endfire \
     persist.vendor.audio.fluence.audiorec=false \
     persist.vendor.audio.fluence.speaker=false \
     persist.vendor.audio.fluence.voicecall=false \
-    persist.vendor.audio.fluence.voicecomm=false \
+    persist.vendor.audio.fluence.voicecomm=true \
     persist.vendor.audio.fluence.voicerec=false \
     persist.vendor.audio.hw.binder.size_kbyte=1024 \
     persist.vendor.audio.ras.enabled=false \
@@ -51,6 +52,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     bluetooth.hfp.client=1 \
     ro.qualcomm.bt.hci_transport=smd
+    ro.bluetooth.a2dp_offload.supported=true
+    persist.bluetooth.a2dp_offload.disabled=false
+    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac \
+    vendor.qcom.bluetooth.soc=cherokee \
+    vendor.bluetooth.soc=cherokee \
+    ro.bluetooth.a4wp=false
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
