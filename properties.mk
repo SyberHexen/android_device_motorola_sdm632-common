@@ -199,6 +199,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000
 
+# Fastbootd
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.fastbootd.available=true
+
 # Time daemon
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true

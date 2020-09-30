@@ -61,6 +61,10 @@ on init
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
 
+on late-fs
+    symlink /dev/block/bootdevice/by-name/oem_b /dev/block/bootdevice/by-name/odm_b
+    symlink /dev/block/bootdevice/by-name/oem_a /dev/block/bootdevice/by-name/odm_a
+
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
