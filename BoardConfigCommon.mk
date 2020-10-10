@@ -171,10 +171,11 @@ TARGET_FS_CONFIG_GEN += \
 # Init
 TARGET_INIT_VENDOR_LIB := //$(PLATFORM_PATH):libinit_sdm632
 TARGET_RECOVERY_DEVICE_MODULES := libinit_sdm632
+BOARD_BUILD_RETROFIT_DYNAMIC_PARTITIONS_OTA_PACKAGE := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sleep_disabled=1
-BOARD_KERNEL_CMDLINE += androidboot.bootdevice=7824900.sdhci androidboot.usbconfigfs=true
+BOARD_KERNEL_CMDLINE += androidboot.usbconfigfs=true
 BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_KERNEL_CMDLINE += androidboot.veritymode=eio
 BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/7824900.sdhci

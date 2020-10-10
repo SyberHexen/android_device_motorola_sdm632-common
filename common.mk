@@ -58,7 +58,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=bin/check_dynamic_partitions \
     FILESYSTEM_TYPE_system=ext4 \
-    POSTINSTALL_OPTIONAL_system=true
+    POSTINSTALL_OPTIONAL_system=false
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
@@ -376,6 +376,10 @@ PRODUCT_PACKAGES += \
 # QMI
 PRODUCT_PACKAGES += \
     libjson
+
+# Ramdisk
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.qcom
 
 # Radio
 PRODUCT_PACKAGES += \
