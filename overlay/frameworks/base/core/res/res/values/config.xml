@@ -351,10 +351,6 @@
     -->
     <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
 
-    <!-- Boolean indicating whether or not to revert to default country code when cellular
-         radio is unable to find any MCC information to infer wifi country code from -->
-    <bool translatable="false" name="config_wifi_revert_country_code_on_cellular_loss">true</bool>
-
     <!-- MMS user agent string -->
     <string name="config_mms_user_agent" translatable="false">motog7</string>
 
@@ -444,18 +440,6 @@
 
     <!-- Remote server that can provide NTP responses. -->
     <string translatable="false" name="config_ntpServer">1.android.pool.ntp.org</string>
-
-    <!-- Integer threshold for low network score, should be somewhat less than the entry threshhold -->
-    <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_24GHz">-85</integer>
-    <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_5GHz">-82</integer>
-    <integer name="config_wifi_framework_wifi_score_entry_rssi_threshold_24GHz">-85</integer>
-    <integer name="config_wifi_framework_wifi_score_entry_rssi_threshold_5GHz">-82</integer>
-
-    <!-- Boolean indicating whether Hotspot 2.0/Passpoint and ANQP queries is enabled -->
-    <bool translatable="false" name="config_wifi_hotspot2_enabled">true</bool>
-
-    <!-- Protected Management Frames (PMF) -->
-    <bool name="config_wifi_pmf_supported">true</bool>
 
     <!-- Enable Zram writeback feature to allow unused pages in zram be written to flash. -->
     <bool name="config_zramWriteback">true</bool>
