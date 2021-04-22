@@ -4,6 +4,12 @@
     "target_path": "kernel/motorola/sdm632"
   },
   {
+    "repository": "SyberHexen/android_hardware_qcom_display",
+    "target_path": "hardware/qcom-caf/msm8996/display"
+    "remote": "github",
+    "revision": "lineage-18.1-caf-msm8996",
+  },
+  {
     "repository": "android_external_bson",
     "target_path": "external/bson"
   },
