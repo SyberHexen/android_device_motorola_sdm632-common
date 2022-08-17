@@ -102,6 +102,10 @@ function blob_fixup() {
                 "${PATCHELF}" --add-needed "libqsap_shim.so" "$LIBQSAP_SHIM"
             done
             ;;
+        # libutils Shim
+        vendor/lib/soundfx/libspeakerbundle.so | vendor/lib*/sensors.*.so)
+            "${PATCHELF}" --replace-needed libutils.so libutils-v32.so "${2}"
+            ;;
     esac
 }
 
