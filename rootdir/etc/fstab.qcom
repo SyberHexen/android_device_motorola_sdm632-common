@@ -7,8 +7,6 @@
 
 #<src>					<mnt_point>		<type>	<mnt_flags and options>								<fs_mgr_flags>
 odm						/odm			ext4	ro,barrier=1										wait,slotselect,logical,first_stage_mount
-product					/product		ext4	ro,barrier=1										wait,slotselect,logical,first_stage_mount
-system_ext				/system_ext		ext4	ro,barrier=1										wait,slotselect,logical,first_stage_mount
 system					/system			ext4	ro,barrier=1										wait,slotselect,logical,first_stage_mount
 vendor					/vendor			ext4	ro,barrier=1										wait,slotselect,logical,first_stage_mount
 /dev/block/bootdevice/by-name/userdata       /data        f2fs    rw,discard,nosuid,nodev,noatime,nodiratime,nobarrier,inline_xattr,inline_data,reserve_root=32768,resgid=1065   wait,check,formattable,latemount,fileencryption=ice,quota,reservedsize=128M
