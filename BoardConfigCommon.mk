@@ -166,7 +166,11 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 
 # Declare boot header
+ifneq (,$(filter true, $(PRODUCT_USE_DYNAMIC_PARTITIONS)))
+BOARD_BOOT_HEADER_VERSION := 2
+else
 BOARD_BOOT_HEADER_VERSION := 1
+endif
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 # Kernel additional flags
@@ -191,9 +195,12 @@ BOARD_VENDORIMAGE_SQUASHFS_COMPRESSOR := lz4
 else
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 endif
+ifneq (,$(filter true, $(PRODUCT_USE_DYNAMIC_PARTITIONS)))
+else
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
+endif
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_COPY_OUT_VENDOR := vendor
@@ -208,7 +215,11 @@ ENABLE_VENDOR_RIL_SERVICE := true
 CUSTOM_APNS_FILE := $(PLATFORM_PATH)/configs/sprint_apns.xml
 
 # Recovery
+ifneq (,$(filter true, $(PRODUCT_USE_DYNAMIC_PARTITIONS)))
+TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/dynamic.fstab.qcom
+else
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
+endif
 
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := persist
@@ -222,8 +233,11 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
 PRODUCT_PRIVATE_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/private
 
 # Verified Boot
+ifneq (,$(filter true, $(PRODUCT_USE_DYNAMIC_PARTITIONS)))
+else
 BOARD_AVB_ENABLE := false
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+endif
 
 # Wifi
 BOARD_WLAN_DEVICE := qcwcn
