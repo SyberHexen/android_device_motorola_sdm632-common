@@ -67,6 +67,11 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             sed -i "s/\/product\/framework\//\/system_ext\/framework\//g" "${2}"
             ;;
+        # IMS Patches
+        system_ext/priv-app/ims/ims.apk)
+            [ "$2" = "" ] && return 0
+            apktool_patch "${2}" "$MY_DIR/ims-patches"
+            ;;
         # Fix missing symbols
         vendor/lib64/libril-qc-hal-qmi.so)
             [ "$2" = "" ] && return 0
